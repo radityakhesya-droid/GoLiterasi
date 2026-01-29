@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoLiterasi - Perpustakaan Digital Nusantara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GoLiterasi - Perpustakaan Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -13,7 +13,6 @@
     <div class="animated-bg">
         <div class="shape s1"></div>
         <div class="shape s2"></div>
-        <div class="overlay-pattern"></div>
     </div>
 
     <nav class="navbar">
@@ -23,78 +22,64 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Cerdas Bersama <span>GoLiterasi</span></h1>
-            <p>Budayakan Membaca Sampai Anak Cucu Kita Nanti Karena Membaca Itu penting</p>
-        </div>
-    </header>
-
     <main class="main-container">
+        <header class="hero">
+            <h1>Cerdas Bersama <span>GoLiterasi</span></h1>
+            <p>Akses literasi digital untuk SDM unggul Indonesia.</p>
+        </header>
+
         <div class="search-section">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Cari buku atau penulis..." onkeyup="searchBook()">
+                <input type="text" id="searchInput" placeholder="Cari judul atau penulis..." onkeyup="searchBook()">
             </div>
         </div>
 
-        <div class="book-grid" id="bookGrid">
-            <div class="book-card" onclick="openReader('buku/api-sejarah-jilid-1.pdf', 'Api Sejarah Jilid 1 - Ahmad Mansur Suryanegara')">
-                <div class="badge">Sejarah</div>
-                <img src="apijilid1.png" alt="Api Sejarah-jilid 1">
-                <div class="book-info">
-                    <h3>Api Sejarah Jilid 1</h3>
-                    <p>Ahmad Mansur Suryanegara</p>
-                </div>
+        <h2 class="category-title"><i class="fas fa-landmark"></i> Sejarah & Peradaban</h2>
+        <div class="book-grid">
+            <div class="book-card" onclick="openReader('buku/SEJARAH_PERADABAN_ISLAM.pdf', 'Sejarah Peradaban Islam')">
+                <div class="badge">Baru</div>
+                <img src="peradabanislam.png" alt="Sejarah Islam">
+                <div class="book-info"><h3>Sejarah Peradaban Islam</h3><p>Dr. Din Muhammad Zakariya</p></div>
             </div>
-
-            <div class="book-card" onclick="openReader('buku/MADILOG_Tan_Malaka_(1943).pdf', 'MADILOG - Tan Malaka')">
-                <div class="badge">Nasionalisme</div>
+            <div class="book-card" onclick="openReader('buku/api-sejarah-jilid-1.pdf', 'Api Sejarah Jilid 1')">
+                <img src="apijilid1.png" alt="Api Sejarah">
+                <div class="book-info"><h3>Api Sejarah Jilid 1</h3><p>Ahmad Mansur Suryanegara</p></div>
+            </div>
+            <div class="book-card" onclick="openReader('buku/MADILOG_Tan_Malaka_(1943).pdf', 'MADILOG')">
                 <img src="madilog.png" alt="Madilog">
-                <div class="book-info">
-                    <h3>MADILOG</h3>
-                    <p>Tan Malaka (1943)</p>
-                </div>
+                <div class="book-info"><h3>MADILOG</h3><p>Tan Malaka</p></div>
             </div>
+        </div>
 
-            <div class="book-card" onclick="openReader('buku/Buku Filsafat Ilmu 2023 - Junaiddin Zakaria Bina Insan.pdf', 'Filsafat Ilmu - Dr. Junaiddin Zakaria')">
-                <div class="badge">Akademik</div>
-                <img src="filsafatilmu.png" alt="Filsafat Ilmu">
-                <div class="book-info">
-                    <h3>Filsafat Ilmu</h3>
-                    <p>Dr. Junaiddin Zakaria</p>
-                </div>
-            </div>
-
-            <div class="book-card" onclick="openReader('buku/Filsafat Hukum.pdf', 'Filsafat Hukum - Dr. Esti Royani')">
-                <div class="badge">Hukum</div>
+        <h2 class="category-title"><i class="fas fa-gavel"></i> Filsafat & Hukum</h2>
+        <div class="book-grid">
+            <div class="book-card" onclick="openReader('buku/Filsafat Hukum.pdf', 'Filsafat Hukum')">
                 <img src="filsafathukum.png" alt="Filsafat Hukum">
-                <div class="book-info">
-                    <h3>Filsafat Hukum</h3>
-                    <p>Dr. Esti Royani, dkk</p>
-                </div>
+                <div class="book-info"><h3>Filsafat Hukum</h3><p>Dr. Esti Royani, dkk</p></div>
             </div>
+            <div class="book-card" onclick="openReader('buku/Buku Filsafat Ilmu 2023 - Junaiddin Zakaria Bina Insan.pdf', 'Filsafat Ilmu')">
+                <img src="filsafatilmu.png" alt="Filsafat Ilmu">
+                <div class="book-info"><h3>Filsafat Ilmu</h3><p>Dr. Junaiddin Zakaria</p></div>
+            </div>
+        </div>
 
-            <div class="book-card" onclick="openReader('buku/artificial-intelligence.pdf', 'Artificial Intelligence - Emi Sita Eriana')">
-                <div class="badge">Teknologi</div>
+        <h2 class="category-title"><i class="fas fa-microchip"></i> Teknologi</h2>
+        <div class="book-grid">
+            <div class="book-card" onclick="openReader('buku/artificial-intelligence.pdf', 'Artificial Intelligence')">
                 <img src="ai.png" alt="AI">
-                <div class="book-info">
-                    <h3>Artificial Intelligence</h3>
-                    <p>Emi Sita Eriana, dkk</p>
-                </div>
+                <div class="book-info"><h3>Artificial Intelligence</h3><p>Emi Sita Eriana, dkk</p></div>
             </div>
         </div>
     </main>
 
     <div id="readerModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Judul Buku</h2>
-                <span class="close" onclick="closeReader()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <iframe id="pdfFrame" src="" width="100%" height="100%" style="border:none;"></iframe>
-            </div>
+        <div class="modal-header">
+            <h2 id="modalTitle">Membaca</h2>
+            <span class="close-btn" onclick="closeReader()"><i class="fas fa-times"></i> Tutup</span>
+        </div>
+        <div class="modal-body">
+            <iframe id="pdfFrame" src="" allow="fullscreen"></iframe>
         </div>
     </div>
 
