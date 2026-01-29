@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoLiterasi - Perpustakaan Digital Nusantara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="animated-bg">
+        <div class="shape s1"></div>
+        <div class="shape s2"></div>
+        <div class="overlay-pattern"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo"><i class="fas fa-book-open"></i> Go<span>Literasi</span></div>
+            <div id="current-time" class="time-display"></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Cerdas Bersama <span>GoLiterasi</span></h1>
+            <p>Membangun SDM unggul melalui logika, sains, dan teknologi untuk masa depan bangsa yang berdaulat.</p>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="search-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Cari buku atau penulis..." onkeyup="searchBook()">
+            </div>
+        </div>
+
+        <div class="book-grid" id="bookGrid">
+            <div class="book-card" onclick="openReader('MADILOG_Tan_Malaka_(1943).pdf', 'MADILOG - Tan Malaka')">
+                <div class="badge">Nasionalisme</div>
+                <img src="Madilog.jpeg" alt="Madilog">
+                <div class="book-info">
+                    <h3>MADILOG</h3>
+                    <p>Tan Malaka (1943)</p>
+                </div>
+            </div>
+
+            <div class="book-card" onclick="openReader('Buku Filsafat Ilmu 2023 - Junaiddin Zakaria Bina Insan.pdf', 'Filsafat Ilmu - Dr. Junaiddin Zakaria')">
+                <div class="badge">Akademik</div>
+                <img src="filsafatilmu.png" alt="Filsafat Ilmu">
+                <div class="book-info">
+                    <h3>Filsafat Ilmu</h3>
+                    <p>Dr. Junaiddin Zakaria (2023)</p>
+                </div>
+            </div>
+
+            <div class="book-card" onclick="openReader('Filsafat Hukum.pdf', 'Filsafat Hukum - Dr. Esti Royani')">
+                <div class="badge">Hukum</div>
+                <img src="filsafathukum.png" alt="Filsafat Hukum">
+                <div class="book-info">
+                    <h3>Filsafat Hukum</h3>
+                    <p>Dr. Esti Royani, dkk (2024)</p>
+                </div>
+            </div>
+
+            <div class="book-card" onclick="openReader('artificial-intelligence.pdf', 'Artificial Intelligence - Emi Sita Eriana')">
+                <div class="badge">Teknologi</div>
+                <img src="ai.png" alt="AI">
+                <div class="book-info">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Emi Sita Eriana, dkk (2023)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="readerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Judul Buku</h2>
+                <span class="close" onclick="closeReader()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <iframe id="pdfFrame" src="" width="100%" height="100%" style="border:none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

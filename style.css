@@ -1,0 +1,73 @@
+:root {
+    --primary: #0081fb;
+    --dark: #1a2a6c;
+    --white: #ffffff;
+    --bg-grad: linear-gradient(180deg, #e0f2ff 0%, #ffffff 70%, #f0f7ff 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-grad);
+    min-height: 100vh;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.overlay-pattern { position: absolute; width: 100%; height: 100%; background-image: url('https://www.transparenttextures.com/patterns/batik-fractal.png'); opacity: 0.1; }
+.shape { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; animation: move 20s infinite alternate ease-in-out; }
+.s1 { width: 450px; height: 450px; background: #a2d2ff; top: -10%; right: -5%; }
+.s2 { width: 350px; height: 350px; background: #ffffff; bottom: 5%; left: -5%; }
+@keyframes move { from { transform: translate(0,0); } to { transform: translate(40px, 40px); } }
+
+/* NAVBAR */
+.navbar { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; padding: 15px 20px; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+
+/* HERO - DITENGAHKAN */
+.hero { 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px 40px; 
+}
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero h1 span { color: var(--primary); }
+.hero p { max-width: 600px; font-size: 1.1rem; opacity: 0.8; }
+
+/* SEARCH */
+.search-section { display: flex; justify-content: center; margin: 30px 0 50px; }
+.search-box { background: white; width: 90%; max-width: 500px; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+.search-box input { border: none; outline: none; width: 100%; margin-left: 10px; font-size: 1rem; }
+
+/* GRID 9:16 */
+.main-container { max-width: 1200px; margin: 0 auto; padding-bottom: 100px; }
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px; padding: 0 20px; }
+
+.book-card {
+    background: white; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.07); transition: 0.4s;
+    aspect-ratio: 9 / 16; display: flex; flex-direction: column;
+    cursor: pointer; position: relative;
+}
+.book-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,129,251,0.2); }
+.book-card img { width: 100%; flex: 1; object-fit: cover; }
+
+.book-info { padding: 15px; text-align: center; border-top: 1px solid #f9f9f9; background: white; }
+.book-info h3 { font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.book-info p { font-size: 0.8rem; color: #777; margin-top: 4px; }
+
+.badge { position: absolute; top: 12px; left: 12px; background: var(--primary); color: white; padding: 4px 12px; border-radius: 10px; font-size: 0.7rem; font-weight: bold; z-index: 10; }
+
+/* MODAL */
+.modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); }
+.modal-content { background: white; margin: 2vh auto; width: 94%; height: 96vh; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+.modal-header { padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; }
+.close { font-size: 2.5rem; cursor: pointer; color: #999; }
+.modal-body { flex: 1; }
