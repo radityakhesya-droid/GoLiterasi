@@ -283,39 +283,88 @@ body {
     font-weight: 700;
 }
 
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
-    justify-content: center; /* Konten grid di tengah */
+.book-info h3 {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    /* MEMAKSA JUDUL MAKSIMAL 2 BARIS AGAR TIDAK MERUSAK GRID */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.4em; /* Tinggi tetap untuk judul */
 }
 
+/* --- GRID SYSTEM SINKRON --- */
+.book-grid {
+    display: grid;
+    /* auto-fill: mengisi baris secara otomatis */
+    /* minmax: ukuran kartu minimal 160px, maksimal 1 bagian dari sisa ruang */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* justify-content: start; MEMAKSA BUKU MULAI DARI KIRI */
+    justify-content: start; 
+}
+
+/* --- KARTU BUKU (PERBAIKAN) --- */
 .book-card {
     background: var(--white);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: 0.3s;
+    transition: 0.3s ease;
     aspect-ratio: 9 / 16;
     display: flex;
     flex-direction: column;
-    margin: 0 auto; /* Menjaga posisi card tetap center */
+    width: 100%; /* Mengikuti lebar kolom grid */
+    margin: 0; /* Menghilangkan margin auto agar tidak ke tengah sendiri */
 }
 
-.book-card img { width: 100%; height: 75%; object-fit: cover; }
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,129,251,0.2);
+}
 
+/* --- GAMBAR SAMPUL --- */
+.book-card img {
+    width: 100%;
+    height: 72%; /* Konsisten 72% untuk gambar */
+    object-fit: cover;
+    display: block;
+}
+
+/* --- INFO BUKU SINKRON TENGAH --- */
 .book-info {
-    padding: 8px;
+    padding: 10px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Info teks di tengah */
+    align-items: center; /* Teks tetap di tengah kartu */
+    text-align: center;
 }
 
-.book-info h3 { font-size: 0.8rem; line-height: 1.2; font-weight: 600; margin-bottom: 2px; }
-.book-info p { font-size: 0.65rem; color: #777; }
+.book-info h3 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    color: var(--dark);
+    /* MEMAKSA JUDUL TETAP DI POSISI YANG SAMA */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.4em;
+}
+
+.book-info p {
+    font-size: 0.65rem;
+    color: #777;
+    margin: 0;
+}
 
 /* --- PERBAIKAN MODAL READER (SINKRON FULLSCREEN) --- */
 .modal {
