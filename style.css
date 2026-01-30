@@ -298,8 +298,6 @@ body {
 /* --- GRID SYSTEM SINKRON --- */
 .book-grid {
     display: grid;
-    /* auto-fill: mengisi baris secara otomatis */
-    /* minmax: ukuran kartu minimal 160px, maksimal 1 bagian dari sisa ruang */
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 25px;
     padding: 20px;
