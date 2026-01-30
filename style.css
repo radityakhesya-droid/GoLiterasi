@@ -323,7 +323,7 @@ body {
 
 .book-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,129,251,0.2);
+    box-shadow: 0 12px 30px #0081fb(0,129,251,0.2);
 }
 
 /* --- GAMBAR SAMPUL --- */
